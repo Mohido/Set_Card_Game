@@ -5,7 +5,7 @@ A single webpage game that was an assignment for the uni, to pass a subject.
 
 Make sure to play the game on a server or a local host. E.g: open visual code and make sure to have the live extension. Then start the website on live edit.
 
-# Wevsite: 
+# Website: 
 https://people.inf.elte.hu/zyqsyj/card_game/
 
 # Game description: 
