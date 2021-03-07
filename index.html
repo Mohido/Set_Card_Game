@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Card Game</title>
+    
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/in_game.css"/>
+
+</head>
+<body>
+    <div id="black_sheet"></div>
+
+    <h1 id="game_name">Set Card Game</h1>
+
+    <div id="menu_page">
+        <div id="settings">
+            <h2 class="settings_header">Settings:-</h2>
+
+            <div id="main">
+                <h3>Difficulty: </h3>
+                <input type="radio" name="difficulty" id="starter" class="radiobuttons" value="starter"/>
+                <label for="starter">Starter</label>
+                <input type="radio" name="difficulty" id="advance" class="radiobuttons" value="advance" checked />
+                <label for="advance">Advance</label>
+                
+                <br/> <br/>
+                <hr/>
+                <br/>
+
+                <h3>Game Mode: </h3>
+                <input type="radio" name="mode" id="practice" class="radiobuttons" value="practice" checked="checked" />
+                <label for="practice" >Practice</label>
+                <input type="radio" name="mode" id="competitive" class="radiobuttons" value="competitive" />
+                <label for="competitive">Competitive</label>
+
+                <br/> <br/>
+                <hr/>
+                <br/>
+
+                <h3 style="display: inline;">Number of players: </h3>
+                <span> 1 </span><input type="range" value="1" max="10" min="1" id="players_count"/> <span>10</span>
+                <br/>
+                <div id="players_names">
+                    <!-- Will be inputted by Javascript because it is dynamic and relies on the count of players-->
+                </div>
+               
+                <br/>
+
+                <div id="costum">
+                    <h3 class="settings_header" style="top: -10px;"> Costum Settings: </h3>
+
+                    <h3>Check Set Button: </h3>
+                    <input type="radio" name="check_set" id="is_set_enable" class="radiobuttons" value="enable" checked/>
+                    <label for="is_set_enable" >Enable</label>
+                    <input type="radio" name="check_set" id="is_set_disable" class="radiobuttons" value="disable"/>
+                    <label for="is_set_disable">Disable</label>    
+
+                    <br><br>
+                    <hr>
+                    <br>
+
+                    <h3>Show Set Button: </h3>
+                    <input type="radio" name="show_set" id="show_set_enable" class="radiobuttons" value="enable" checked/>
+                    <label for="show_set_enable" >Enable</label>
+                    <input type="radio" name="show_set" id="show_set_disable" class="radiobuttons" value="disable"/>
+                    <label for="show_set_disable">Disable</label> 
+
+                    <br><br>
+                    <hr>
+                    <br>
+                    
+                    <h3>Draw Card Option: </h3>
+                    <input type="radio" name="draw_card" id="draw_card_enable" class="radiobuttons" value="enable" checked/>
+                    <label for="draw_card_enable" >Automatic</label>
+                    <input type="radio" name="draw_card" id="draw_card_disable" class="radiobuttons" value="disable"/>
+                    <label for="draw_card_disable">Manual</label> 
+                </div>
+
+                <br>
+
+                <button type="submit" class="game_btn" id="start_game"> Start Game</button>
+
+            </div>
+        </div>
+
+        <div id="game_discreption">
+            <h2 class="settings_header">Game Explanation</h2>
+            <p>
+                The goal of the game is to find SETs of three cards from the twelve cards placed on the desk. All cards have four properties.
+            </p>
+                <ul>
+                    <li>SHAPE: oval, squiggle, diamond</li>
+                    <li> COLOR: red, green, purlple</li>
+                    <li>NUMBER: 1,2, or 3 shapes</li>
+                    <li>SHADING: solid, striped or outlined shapes (only used in the subtasks for bonus points)</li>
+                </ul>
+                   
+            <p>SET consists of three cards, where all properties are:</p>
+                <ul>
+                    <li>the same on all of the cards</li>
+                    <li>different on all of the cards.</li>
+                </ul>
+                
+            <p>
+                The selected cards have to adhere to these rules for ALL properties. Worded differently: if the three cards have the same number of shapes, or 1 2 and 3; if the color is the same, or all three colors; if all shapes are solid, or one solid, striped and empty, etc...
+            </p>
+        </div>
+
+
+        <div id="scores_board">
+            <h2 class="settings_header">Scores Board</h2>
+            <div id="best_solo_3">
+                
+            </div>
+            <div id="best_solo_4">
+
+            </div>
+            <div id="best_multi">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="game_page"> 
+        <div id="side_section">
+            <div id="back_btn">
+                <input type="button" class="game_btn" value="Back"/>
+            </div>
+            <div id="news_feed">
+                <h2 class="news_header">News Feed:-</h2>
+                <div id="news">
+                    <h3></h3>
+                </div>
+            </div>
+
+            <!--render The span tags using JS by using this template-->
+
+            <div id="game_states">
+                <h2>Game States:</h2>
+                <p>Difficulty: <span id="game_states_difficulty"></span></p>
+                <p>Mode: <span id="game_states_mode"></span></p>
+                <p>Players Count: <span id="game_states_players_count"></span></p>
+                <p>Timer: <span id="game_states_timer"></span></p>
+            </div>
+            
+            <div id="leader_board">
+                <h2>Leader Boards:</h2>
+                <!--render using JS by using this template
+                 <div class="leaderBoard_player">
+                        <h3>1) playerName:</h3>
+                        <p>Current: 20</p>
+                        <p>Total: 30</p>
+                    </div>-->
+                <div id="players_ranks">
+                </div>
+            </div>
+        </div>
+
+        <div id="game_section">
+            <div id="board">
+                <div id="first_layer">
+                    <span id="logo">Set Card</span>
+                    <div id="buttons_area">
+                        <!--  <input id="setExistBtn" class="game_btn" type="button" value="Set Exist"/>
+                        <input id="setShowBtn" class="game_btn" type="button" value="Show Set"/>
+                        <input id="setDrawBtn" class="game_btn" type="button" value="Draw Cards"/>  -->
+                    </div>
+                </div>
+                <div id="second_layer">
+                    <div id="players_buttons">
+                        <!--
+    <input type="button" class="game_btn players" value="player1"/>
+                        -->
+                    </div>
+                    <div id="cards_area">
+                        <!--
+ <img class="cards" src="cards/green/diamond/empty/1.png" alt="diamond empty 1"/>
+                        -->
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="scripts/index.js"></script> <!--The main engine of the game-->
+</body>
+</html>

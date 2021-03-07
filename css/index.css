@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../cards/cards_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#black_sheet{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000ad;
+    z-index: -10;
+}
+
+/*game title*/
+#game_name{
+    width: 100%;
+    margin: 0;
+    color: #cdd381d0;
+    text-shadow: 5px 5px 10px black;
+    padding: 10px;
+    text-align: center;
+    /*background-color: #979090;*/
+    border-radius: 5px;
+}
+
+
+
+
+/*The Whole Settings Panel*/
+#menu_page{
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    color: black;
+    /*background-color: #dadada;*/
+    
+    border-radius: 10px;
+}
+
+
+#menu_page #settings{
+    background-color: #dadada;
+    border: 1px solid #5a5a5a;
+}
+
+
+/*main menu*/
+#menu_page #settings #main{
+    padding: 10px;
+}
+
+.settings_header{
+    background-color: white;
+    min-width: 100px;
+    max-width: 200px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: -10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#menu_page .radiobuttons{
+    margin-left: 40px;
+}
+
+
+#players_names{ /*the input players names panel*/
+    padding: 10px;
+}
+#players_names input{
+    min-width: 50px;
+    max-width: 100px;
+}
+
+
+/*costum menu*/
+#menu_page #costum{
+    display: block;
+    border-top: 1px solid black;
+}
+#menu_page #costum hr{
+    width: 300px;
+}
+
+/*settings footer*/
+.game_btn{
+    min-width: 100px;
+    min-height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#menu_page #settings #start_game{
+    background-color: #ffffff;
+    display: block;
+    margin: auto;
+}
+#menu_page #settings #start_game:hover{
+    background-color: rgb(0, 255, 0);
+}
+
+
+
+#game_discreption{
+    background-color: #dadada;
+    border: 1px solid #5a5a5a;
+    margin: 30px auto 30px auto;
+    width: 100%;
+    border-radius: 5px;
+}
+#game_discreption p{
+   
+   margin: 10px;
+}
+#game_discreption ul{
+    margin-left: 40px;
+}
+
+
+#scores_board {
+    background-color: #dadada;
+    border: 1px solid #5a5a5a;
+    margin: 30px auto 30px auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+#best_solo_3{
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#best_solo_3 ul{
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    float: left;
+}
+#best_solo_3::after{
+    content: " ";
+    display: block;
+    clear : both;
+}
+
+
+
+
+
+#best_solo_4{
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#best_solo_4 ul{
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    float: left;
+}
+#best_solo_4::after{
+    content: " ";
+    display: block;
+    clear : both;
+}
+
+
+
+#best_multi{
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#best_multi ul{
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    float: left;
+}
+
+#best_multi ul li:nth-child(odd){
+    border-bottom: 1px solid black;
+}
+
+
+#best_multi::after{
+    content: " ";
+    display: block;
+    clear : both;
+}
